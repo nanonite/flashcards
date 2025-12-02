@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/design-pattern-flashcard.schema.json",
+  "title": "Design Pattern Flashcard",
+  "description": "A bilingual flashcard for software design patterns",
+  "type": "object",
+  "properties": {
+    "FrontEN": {
+      "type": "string",
+      "description": "The question/prompt in English",
+      "minLength": 1
+    },
+    "BackEN": {
+      "type": "string",
+      "description": "The answer/explanation in English",
+      "minLength": 1
+    },
+    "FrontES": {
+      "type": "string",
+      "description": "The question/prompt in Spanish",
+      "minLength": 1
+    },
+    "BackES": {
+      "type": "string",
+      "description": "The answer/explanation in Spanish",
+      "minLength": 1
+    },
+    "Tags": {
+      "type": "string",
+      "description": "Space-separated tags for the flashcard",
+      "pattern": "^[a-z\\s\\-]+$"
+    },
+    "Category": {
+      "type": "string",
+      "description": "The design pattern category",
+      "enum": ["Structural", "Creational", "Behavioral", "Comparison", "Cross-Cutting"]
+    },
+    "Page": {
+      "type": "string",
+      "description": "Reference page number",
+      "pattern": "^[0-9]+$"
+    }
+  },
+  "required": [
+    "FrontEN",
+    "BackEN",
+    "FrontES",
+    "BackES",
+    "Tags",
+    "Category",
+    "Page"
+  ],
+  "additionalProperties": false
+}
